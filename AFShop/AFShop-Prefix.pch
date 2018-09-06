@@ -1,0 +1,14 @@
+//
+//  AFShop-Prefix.pch
+//  AFShop
+//
+//  Created by 飞 on 2018/9/6.
+//  Copyright © 2018 飞. All rights reserved.
+//
+
+#ifndef AFShop_Prefix_pch
+#define AFShop_Prefix_pch
+
+#import <Masonry/Masonry.h>
+
+#endif /* AFShop_Prefix_pch */
