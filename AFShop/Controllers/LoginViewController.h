@@ -6,8 +6,7 @@
 //  Copyright © 2018 飞. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-@interface LoginViewController : UIViewController
+#import "TPKeyboardAvoidingTableView.h"
+@interface LoginViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @end

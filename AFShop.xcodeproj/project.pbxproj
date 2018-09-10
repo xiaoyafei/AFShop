@@ -14,6 +14,8 @@
 		F98AABE3213FC19300456B8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F98AABE1213FC19300456B8A /* LaunchScreen.storyboard */; };
 		F98AABE6213FC19300456B8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AABE5213FC19300456B8A /* main.m */; };
 		F98AABF12140D32800456B8A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AABF02140D32800456B8A /* LoginViewController.m */; };
+		F98AABF6214603D300456B8A /* LoginInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AABF5214603D300456B8A /* LoginInputCell.m */; };
+		F98AABFA21463E6700456B8A /* UIColor+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AABF921463E6700456B8A /* UIColor+Util.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,10 @@
 		F98AABEF2140D32800456B8A /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		F98AABF02140D32800456B8A /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		F98AABF221412D5100456B8A /* AFShop-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AFShop-Prefix.pch"; sourceTree = "<group>"; };
+		F98AABF4214603D300456B8A /* LoginInputCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginInputCell.h; sourceTree = "<group>"; };
+		F98AABF5214603D300456B8A /* LoginInputCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginInputCell.m; sourceTree = "<group>"; };
+		F98AABF821463E6700456B8A /* UIColor+Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Util.h"; sourceTree = "<group>"; };
+		F98AABF921463E6700456B8A /* UIColor+Util.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Util.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,7 @@
 		F98AABD5213FC19200456B8A /* AFShop */ = {
 			isa = PBXGroup;
 			children = (
+				F98AABF721463DC600456B8A /* Categories */,
 				F98AABEE2140D27900456B8A /* Models */,
 				F98AABED2140D26900456B8A /* Views */,
 				F98AABEC213FE6DF00456B8A /* Controllers */,
@@ -112,6 +119,7 @@
 		F98AABED2140D26900456B8A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F98AABF32146035F00456B8A /* Login */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -121,6 +129,24 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F98AABF32146035F00456B8A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F98AABF4214603D300456B8A /* LoginInputCell.h */,
+				F98AABF5214603D300456B8A /* LoginInputCell.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F98AABF721463DC600456B8A /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				F98AABF821463E6700456B8A /* UIColor+Util.h */,
+				F98AABF921463E6700456B8A /* UIColor+Util.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,9 +241,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F98AABF12140D32800456B8A /* LoginViewController.m in Sources */,
+				F98AABFA21463E6700456B8A /* UIColor+Util.m in Sources */,
 				F98AABDB213FC19200456B8A /* ViewController.m in Sources */,
 				F98AABE6213FC19300456B8A /* main.m in Sources */,
 				F98AABD8213FC19200456B8A /* AppDelegate.m in Sources */,
+				F98AABF6214603D300456B8A /* LoginInputCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
