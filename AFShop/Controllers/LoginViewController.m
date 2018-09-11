@@ -76,6 +76,16 @@
 
 #pragma mark - event response
 - (void)didTappedSubmitButton:(id)sender {
+    [self.view endEditing:YES];
+    if (![self.phoneNumber validatePhoneNumber]) {
+        [NSObject showHudTipStr:@"请输入正确的手机号"];
+        return;
+    }
+    if (![self.password validatePassword]) {
+        [NSObject showHudTipStr:@"请输入6-18位数字和字母的组合的密码"];
+        return;
+    }
+    //保存用户信息
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -109,7 +119,7 @@
 }
 
 - (UIView *)customFooterView {
-    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 200)];
+    UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 150)];
     UIButton *submitButton = [UIButton new];
     [submitButton setTitle:@"登陆" forState:UIControlStateNormal];
     submitButton.titleLabel.font = [UIFont systemFontOfSize:17.f];
@@ -120,7 +130,7 @@
     [submitButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(footerView).offset(kLoginPadding);
         make.right.equalTo(footerView).offset(-kLoginPadding);
-        make.height.mas_equalTo(60.f);
+        make.height.mas_equalTo(55.f);
         make.bottom.equalTo(footerView);
     }];
     return footerView;

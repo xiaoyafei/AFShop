@@ -11,17 +11,32 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+
 #import "UIColor+Util.h"
+#import "NSObject+Common.h"
+#import "NSString+Common.h"
+
 #import <Masonry/Masonry.h>
+#import "MBProgressHUD.h"
+
+#pragma mark - Utils Macros
+#define kKeyWindow [UIApplication sharedApplication].keyWindow
+
+#ifdef DEBUG
+#define NXLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#define NXLog(...)
+#endif
 
 #pragma mark - Common Color
 #define kColorGreen [UIColor colorWithHex:0x3FC66B]
 #define kColorLine [UIColor colorWithHex:0xF0F0F0]
 
-#pragma mark - Common Width&Height
+#pragma mark - Common Dimens
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
 #define kPadding 10.0
 #define kLoginPadding 20.0
-#define kLine_MinHeight (0.5 * [UIScreen mainScreen].scale)
+#define kLineHeight (0.5 * [UIScreen mainScreen].scale)
 
 #endif /* AFShop_Prefix_pch */

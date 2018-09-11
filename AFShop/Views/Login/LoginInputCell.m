@@ -24,7 +24,7 @@
         
         [self.contentView addSubview:self.lineView];
         [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.mas_equalTo(kLine_MinHeight);
+            make.height.mas_equalTo(kLineHeight);
             make.left.equalTo(self.contentView).offset(kLoginPadding);
             make.right.equalTo(self.contentView).offset(-kLoginPadding);
             make.bottom.equalTo(self.contentView);

@@ -16,6 +16,8 @@
 		F98AABF12140D32800456B8A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AABF02140D32800456B8A /* LoginViewController.m */; };
 		F98AABF6214603D300456B8A /* LoginInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AABF5214603D300456B8A /* LoginInputCell.m */; };
 		F98AABFA21463E6700456B8A /* UIColor+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AABF921463E6700456B8A /* UIColor+Util.m */; };
+		F98AABFD2147541100456B8A /* NSObject+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AABFC2147541100456B8A /* NSObject+Common.m */; };
+		F98AAC00214757CA00456B8A /* NSString+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AABFF214757CA00456B8A /* NSString+Common.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,10 @@
 		F98AABF5214603D300456B8A /* LoginInputCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginInputCell.m; sourceTree = "<group>"; };
 		F98AABF821463E6700456B8A /* UIColor+Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Util.h"; sourceTree = "<group>"; };
 		F98AABF921463E6700456B8A /* UIColor+Util.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Util.m"; sourceTree = "<group>"; };
+		F98AABFB2147541100456B8A /* NSObject+Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Common.h"; sourceTree = "<group>"; };
+		F98AABFC2147541100456B8A /* NSObject+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Common.m"; sourceTree = "<group>"; };
+		F98AABFE214757CA00456B8A /* NSString+Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Common.h"; sourceTree = "<group>"; };
+		F98AABFF214757CA00456B8A /* NSString+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Common.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +151,10 @@
 			children = (
 				F98AABF821463E6700456B8A /* UIColor+Util.h */,
 				F98AABF921463E6700456B8A /* UIColor+Util.m */,
+				F98AABFB2147541100456B8A /* NSObject+Common.h */,
+				F98AABFC2147541100456B8A /* NSObject+Common.m */,
+				F98AABFE214757CA00456B8A /* NSString+Common.h */,
+				F98AABFF214757CA00456B8A /* NSString+Common.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -240,7 +250,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F98AAC00214757CA00456B8A /* NSString+Common.m in Sources */,
 				F98AABF12140D32800456B8A /* LoginViewController.m in Sources */,
+				F98AABFD2147541100456B8A /* NSObject+Common.m in Sources */,
 				F98AABFA21463E6700456B8A /* UIColor+Util.m in Sources */,
 				F98AABDB213FC19200456B8A /* ViewController.m in Sources */,
 				F98AABE6213FC19300456B8A /* main.m in Sources */,
