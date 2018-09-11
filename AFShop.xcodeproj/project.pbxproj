@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		988BB1500858AC6E24667984 /* libPods-AFShop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EDF32EBDC3ADE4FA1D4B81B /* libPods-AFShop.a */; };
 		F98AABD8213FC19200456B8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AABD7213FC19200456B8A /* AppDelegate.m */; };
-		F98AABDB213FC19200456B8A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AABDA213FC19200456B8A /* ViewController.m */; };
+		F98AABDB213FC19200456B8A /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AABDA213FC19200456B8A /* RootViewController.m */; };
 		F98AABE0213FC19300456B8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F98AABDF213FC19300456B8A /* Assets.xcassets */; };
 		F98AABE3213FC19300456B8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F98AABE1213FC19300456B8A /* LaunchScreen.storyboard */; };
 		F98AABE6213FC19300456B8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AABE5213FC19300456B8A /* main.m */; };
@@ -18,6 +18,10 @@
 		F98AABFA21463E6700456B8A /* UIColor+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AABF921463E6700456B8A /* UIColor+Util.m */; };
 		F98AABFD2147541100456B8A /* NSObject+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AABFC2147541100456B8A /* NSObject+Common.m */; };
 		F98AAC00214757CA00456B8A /* NSString+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AABFF214757CA00456B8A /* NSString+Common.m */; };
+		F98AAC032147BADA00456B8A /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AAC022147BADA00456B8A /* MineViewController.m */; };
+		F98AAC062147BB5100456B8A /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AAC052147BB5100456B8A /* HomeViewController.m */; };
+		F98AAC092147BB6700456B8A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AAC082147BB6700456B8A /* SearchViewController.m */; };
+		F98AAC0C2147BBAB00456B8A /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AAC0B2147BBAB00456B8A /* CartViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +31,8 @@
 		F98AABD3213FC19200456B8A /* AFShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F98AABD6213FC19200456B8A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F98AABD7213FC19200456B8A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F98AABD9213FC19200456B8A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F98AABDA213FC19200456B8A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F98AABD9213FC19200456B8A /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		F98AABDA213FC19200456B8A /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		F98AABDF213FC19300456B8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F98AABE2213FC19300456B8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F98AABE4213FC19300456B8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,6 +48,14 @@
 		F98AABFC2147541100456B8A /* NSObject+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Common.m"; sourceTree = "<group>"; };
 		F98AABFE214757CA00456B8A /* NSString+Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Common.h"; sourceTree = "<group>"; };
 		F98AABFF214757CA00456B8A /* NSString+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Common.m"; sourceTree = "<group>"; };
+		F98AAC012147BADA00456B8A /* MineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		F98AAC022147BADA00456B8A /* MineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		F98AAC042147BB5100456B8A /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		F98AAC052147BB5100456B8A /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		F98AAC072147BB6700456B8A /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		F98AAC082147BB6700456B8A /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		F98AAC0A2147BBAB00456B8A /* CartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CartViewController.h; sourceTree = "<group>"; };
+		F98AAC0B2147BBAB00456B8A /* CartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CartViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,10 +126,18 @@
 		F98AABEC213FE6DF00456B8A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F98AABD9213FC19200456B8A /* ViewController.h */,
-				F98AABDA213FC19200456B8A /* ViewController.m */,
+				F98AABD9213FC19200456B8A /* RootViewController.h */,
+				F98AABDA213FC19200456B8A /* RootViewController.m */,
 				F98AABEF2140D32800456B8A /* LoginViewController.h */,
 				F98AABF02140D32800456B8A /* LoginViewController.m */,
+				F98AAC042147BB5100456B8A /* HomeViewController.h */,
+				F98AAC052147BB5100456B8A /* HomeViewController.m */,
+				F98AAC072147BB6700456B8A /* SearchViewController.h */,
+				F98AAC082147BB6700456B8A /* SearchViewController.m */,
+				F98AAC0A2147BBAB00456B8A /* CartViewController.h */,
+				F98AAC0B2147BBAB00456B8A /* CartViewController.m */,
+				F98AAC012147BADA00456B8A /* MineViewController.h */,
+				F98AAC022147BADA00456B8A /* MineViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -253,9 +273,13 @@
 				F98AAC00214757CA00456B8A /* NSString+Common.m in Sources */,
 				F98AABF12140D32800456B8A /* LoginViewController.m in Sources */,
 				F98AABFD2147541100456B8A /* NSObject+Common.m in Sources */,
+				F98AAC062147BB5100456B8A /* HomeViewController.m in Sources */,
+				F98AAC0C2147BBAB00456B8A /* CartViewController.m in Sources */,
+				F98AAC032147BADA00456B8A /* MineViewController.m in Sources */,
 				F98AABFA21463E6700456B8A /* UIColor+Util.m in Sources */,
-				F98AABDB213FC19200456B8A /* ViewController.m in Sources */,
+				F98AABDB213FC19200456B8A /* RootViewController.m in Sources */,
 				F98AABE6213FC19300456B8A /* main.m in Sources */,
+				F98AAC092147BB6700456B8A /* SearchViewController.m in Sources */,
 				F98AABD8213FC19200456B8A /* AppDelegate.m in Sources */,
 				F98AABF6214603D300456B8A /* LoginInputCell.m in Sources */,
 			);

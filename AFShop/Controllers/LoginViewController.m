@@ -10,10 +10,11 @@
 #import "LoginInputCell.h"
 
 @interface LoginViewController ()
-@property(nonatomic, strong) NSString *phoneNumber;
-@property(nonatomic, strong) NSString *password;
+@property (nonatomic, strong) NSString *phoneNumber;
+@property (nonatomic, strong) NSString *password;
 
-@property(nonatomic, strong) TPKeyboardAvoidingTableView *tableView;
+@property (nonatomic, strong) TPKeyboardAvoidingTableView *tableView;
+@property (nonatomic, strong) UIButton *backButton;
 @end
 
 @implementation LoginViewController
@@ -28,6 +29,12 @@
     }];
     self.tableView.tableHeaderView = [self customHeaderView];
     self.tableView.tableFooterView = [self customFooterView];
+    [self.view addSubview:self.backButton];
+    [self.backButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.view.mas_safeAreaLayoutGuideLeft);
+        make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);
+        make.size.mas_equalTo(CGSizeMake(60, 48));
+    }];
 }
 
 #pragma mark - UITableViewDelegate
@@ -89,6 +96,10 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)didTappedBackButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - private methods
 
 #pragma mark - getters and setters
@@ -111,7 +122,7 @@
     headerLabel.textColor = kColorGreen;
     [headerView addSubview:headerLabel];
     [headerLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(headerView).offset(kLoginPadding);
+        make.left.equalTo(headerView.mas_safeAreaLayoutGuideLeft).offset(kLoginPadding);
         make.bottom.equalTo(headerView);
         make.height.mas_equalTo(42);
     }];
@@ -128,12 +139,21 @@
     [submitButton addTarget:self action:@selector(didTappedSubmitButton:) forControlEvents:UIControlEventTouchUpInside];
     [footerView addSubview:submitButton];
     [submitButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(footerView).offset(kLoginPadding);
-        make.right.equalTo(footerView).offset(-kLoginPadding);
+        make.left.equalTo(footerView.mas_safeAreaLayoutGuideLeft).offset(kLoginPadding);
+        make.right.equalTo(footerView.mas_safeAreaLayoutGuideRight).offset(-kLoginPadding);
         make.height.mas_equalTo(55.f);
-        make.bottom.equalTo(footerView);
+        make.bottom.equalTo(footerView.mas_safeAreaLayoutGuideBottom);
     }];
     return footerView;
+}
+
+- (UIButton *)backButton {
+    if (!_backButton) {
+        _backButton = [UIButton new];
+        [_backButton setImage:[UIImage imageNamed:@"ic_back"] forState:UIControlStateNormal];
+        [_backButton addTarget:self action:@selector(didTappedBackButton:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _backButton;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
