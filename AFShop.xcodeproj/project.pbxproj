@@ -22,6 +22,7 @@
 		F98AAC062147BB5100456B8A /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AAC052147BB5100456B8A /* HomeViewController.m */; };
 		F98AAC092147BB6700456B8A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AAC082147BB6700456B8A /* SearchViewController.m */; };
 		F98AAC0C2147BBAB00456B8A /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AAC0B2147BBAB00456B8A /* CartViewController.m */; };
+		F98AAC10214A5F2F00456B8A /* UIImage+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AAC0F214A5F2F00456B8A /* UIImage+Common.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,8 @@
 		F98AAC082147BB6700456B8A /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		F98AAC0A2147BBAB00456B8A /* CartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CartViewController.h; sourceTree = "<group>"; };
 		F98AAC0B2147BBAB00456B8A /* CartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CartViewController.m; sourceTree = "<group>"; };
+		F98AAC0E214A5F2F00456B8A /* UIImage+Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Common.h"; sourceTree = "<group>"; };
+		F98AAC0F214A5F2F00456B8A /* UIImage+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Common.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +178,8 @@
 				F98AABFC2147541100456B8A /* NSObject+Common.m */,
 				F98AABFE214757CA00456B8A /* NSString+Common.h */,
 				F98AABFF214757CA00456B8A /* NSString+Common.m */,
+				F98AAC0E214A5F2F00456B8A /* UIImage+Common.h */,
+				F98AAC0F214A5F2F00456B8A /* UIImage+Common.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 				F98AABFA21463E6700456B8A /* UIColor+Util.m in Sources */,
 				F98AABDB213FC19200456B8A /* RootViewController.m in Sources */,
 				F98AABE6213FC19300456B8A /* main.m in Sources */,
+				F98AAC10214A5F2F00456B8A /* UIImage+Common.m in Sources */,
 				F98AAC092147BB6700456B8A /* SearchViewController.m in Sources */,
 				F98AABD8213FC19200456B8A /* AppDelegate.m in Sources */,
 				F98AABF6214603D300456B8A /* LoginInputCell.m in Sources */,

@@ -34,6 +34,7 @@
         item.image = [[UIImage imageNamed:[images[idx] stringByAppendingString:@"_normal"]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         item.selectedImage = [[UIImage imageNamed:images[idx]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     }];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : kColorGreen} forState:UIControlStateSelected];
 }
 
 #pragma mark - delegate
