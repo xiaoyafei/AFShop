@@ -12,7 +12,6 @@
 @interface HomeViewController ()
 @property (nonatomic, strong)UIView *searchView;
 @property (nonatomic, strong)UIButton *searchButton;
-@property (nonatomic, strong)UICollectionView *collectionView;
 @end
 
 @implementation HomeViewController
@@ -64,20 +63,6 @@
         [_searchButton addTarget:self action:@selector(didTappedSearchButton:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _searchButton;
-}
-
-- (UICollectionView *)collectionView {
-    if (!_collectionView) {
-        UICollectionViewFlowLayout *flowLayout = [UICollectionViewFlowLayout new];
-        flowLayout.itemSize = CGSizeMake(100, 30);
-        flowLayout.minimumLineSpacing = 10.f;
-        flowLayout.minimumInteritemSpacing = 5.f;
-        flowLayout.sectionInset = UIEdgeInsetsZero;
-        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
-        _collectionView.delegate = self;
-        _collectionView.dataSource = self;
-    }
-    return _collectionView;
 }
 
 - (void)didReceiveMemoryWarning {

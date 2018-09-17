@@ -33,6 +33,7 @@
 #define kColorGreen [UIColor colorWithHex:0x3FC66B]
 #define kColorLine [UIColor colorWithHex:0xF0F0F0]
 #define kColorGray [UIColor colorWithHex:0xF2F2F2]
+#define kColorLightGray [UIColor colorWithHex:0xE5E5E5]
 #define kColorTextBlack [UIColor colorWithHex:0x595959]
 
 #pragma mark - Common Dimens

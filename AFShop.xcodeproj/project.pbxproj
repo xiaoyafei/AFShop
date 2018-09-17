@@ -23,6 +23,8 @@
 		F98AAC092147BB6700456B8A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AAC082147BB6700456B8A /* SearchViewController.m */; };
 		F98AAC0C2147BBAB00456B8A /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AAC0B2147BBAB00456B8A /* CartViewController.m */; };
 		F98AAC10214A5F2F00456B8A /* UIImage+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AAC0F214A5F2F00456B8A /* UIImage+Common.m */; };
+		F98AAC14214B4B9000456B8A /* SearchTagCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AAC13214B4B8F00456B8A /* SearchTagCollectionViewCell.m */; };
+		F98AAC17214BA81D00456B8A /* SearchHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AAC16214BA81D00456B8A /* SearchHeaderCollectionReusableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,10 @@
 		F98AAC0B2147BBAB00456B8A /* CartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CartViewController.m; sourceTree = "<group>"; };
 		F98AAC0E214A5F2F00456B8A /* UIImage+Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Common.h"; sourceTree = "<group>"; };
 		F98AAC0F214A5F2F00456B8A /* UIImage+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Common.m"; sourceTree = "<group>"; };
+		F98AAC12214B4B8F00456B8A /* SearchTagCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchTagCollectionViewCell.h; sourceTree = "<group>"; };
+		F98AAC13214B4B8F00456B8A /* SearchTagCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchTagCollectionViewCell.m; sourceTree = "<group>"; };
+		F98AAC15214BA81D00456B8A /* SearchHeaderCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchHeaderCollectionReusableView.h; sourceTree = "<group>"; };
+		F98AAC16214BA81D00456B8A /* SearchHeaderCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchHeaderCollectionReusableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +154,7 @@
 		F98AABED2140D26900456B8A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F98AAC11214B4B4700456B8A /* Search */,
 				F98AABF32146035F00456B8A /* Login */,
 			);
 			path = Views;
@@ -182,6 +189,17 @@
 				F98AAC0F214A5F2F00456B8A /* UIImage+Common.m */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		F98AAC11214B4B4700456B8A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F98AAC12214B4B8F00456B8A /* SearchTagCollectionViewCell.h */,
+				F98AAC13214B4B8F00456B8A /* SearchTagCollectionViewCell.m */,
+				F98AAC15214BA81D00456B8A /* SearchHeaderCollectionReusableView.h */,
+				F98AAC16214BA81D00456B8A /* SearchHeaderCollectionReusableView.m */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,8 +295,10 @@
 			files = (
 				F98AAC00214757CA00456B8A /* NSString+Common.m in Sources */,
 				F98AABF12140D32800456B8A /* LoginViewController.m in Sources */,
+				F98AAC14214B4B9000456B8A /* SearchTagCollectionViewCell.m in Sources */,
 				F98AABFD2147541100456B8A /* NSObject+Common.m in Sources */,
 				F98AAC062147BB5100456B8A /* HomeViewController.m in Sources */,
+				F98AAC17214BA81D00456B8A /* SearchHeaderCollectionReusableView.m in Sources */,
 				F98AAC0C2147BBAB00456B8A /* CartViewController.m in Sources */,
 				F98AAC032147BADA00456B8A /* MineViewController.m in Sources */,
 				F98AABFA21463E6700456B8A /* UIColor+Util.m in Sources */,

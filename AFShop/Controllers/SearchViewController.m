@@ -7,11 +7,16 @@
 //
 
 #import "SearchViewController.h"
+#import "SearchTagCollectionViewCell.h"
+#import "SearchHeaderCollectionReusableView.h"
 
-@interface SearchViewController () <UISearchBarDelegate>
+@interface SearchViewController () <UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong)UISearchBar *searchBar;
 @property (nonatomic, strong)UITextField *searchField;
 @property (nonatomic, strong)UIButton *cancelBtn;
+@property (nonatomic, strong)UICollectionView *collectionView;
+@property (nonatomic, strong)NSMutableArray *tagTextArray;
+@property (nonatomic, strong)NSMutableArray *recommendArray;
 @end
 
 @implementation SearchViewController
@@ -19,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"搜索";
-    self.view.backgroundColor = kColorGray;
+    self.view.backgroundColor = [UIColor whiteColor];
     [self.navigationController.navigationBar setBarTintColor:kColorGray];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor clearColor]] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
@@ -31,6 +36,45 @@
         make.top.equalTo(currentBar.mas_safeAreaLayoutGuideTop).offset(10);
         make.bottom.equalTo(currentBar.mas_safeAreaLayoutGuideBottom).offset(-10);
     }];
+    
+    [self.view addSubview:self.collectionView];
+    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+    
+    _tagTextArray = [NSMutableArray arrayWithArray:@[@"肖步渠", @"洗衣机洗碗机", @"服装西服T恤额", @"微微一笑很青春"]];
+    _recommendArray = [NSMutableArray arrayWithArray:@[@"牛仔裤",@"袜子",@"洗衣机"]];
+}
+
+#pragma mark - UICollectionViewDelegate & DataSource
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 2;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return _tagTextArray.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    SearchTagCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellIdentifier_Search_Tag_Cell forIndexPath:indexPath];
+    cell.tagLabel.text = [_tagTextArray objectAtIndex:indexPath.row];
+    return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat width = [[_tagTextArray objectAtIndex:indexPath.row] widthWithFont:[UIFont systemFontOfSize:14]];
+    return CGSizeMake(width + 30, 30);
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    
+    SearchHeaderCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kCellIdentifier_Search_Header forIndexPath:indexPath];
+    headerView.title.text = @"历史记录";
+    [headerView.button setImage:[UIImage imageNamed:@"ic_delete"] forState:UIControlStateNormal];
+    headerView.buttonTappedBlock = ^(id sender) {
+        NXLog(@"123");
+    };
+    return headerView;
 }
 
 #pragma mark - UISearchBarDelegate
@@ -62,6 +106,24 @@
         _cancelBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     }
     return _searchBar;
+}
+
+- (UICollectionView *)collectionView {
+    if (!_collectionView) {
+        UICollectionViewFlowLayout *flowLayout = [UICollectionViewFlowLayout new];
+        flowLayout.itemSize = CGSizeMake(100, 30);
+        flowLayout.minimumLineSpacing = 10.f;
+        flowLayout.minimumInteritemSpacing = 10.f;
+        flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 0, 10);
+        flowLayout.headerReferenceSize = CGSizeMake(kScreenWidth, 30);
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+        _collectionView.delegate = self;
+        _collectionView.dataSource = self;
+        _collectionView.backgroundColor = kColorGray;
+        [_collectionView registerClass:[SearchTagCollectionViewCell class] forCellWithReuseIdentifier:kCellIdentifier_Search_Tag_Cell];
+        [_collectionView registerClass:[SearchHeaderCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kCellIdentifier_Search_Header];
+    }
+    return _collectionView;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

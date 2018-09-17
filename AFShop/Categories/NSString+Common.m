@@ -22,4 +22,14 @@
     BOOL isMatch = [pred evaluateWithObject:self];
     return isMatch;
 }
+
+- (CGSize)sizeWithFont:(UIFont *)font andMaxSize:(CGSize)size{
+    NSDictionary *attrs = @{NSFontAttributeName: font};
+    return [self boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil].size;
+}
+
+- (CGFloat)widthWithFont:(UIFont *)font {
+    CGSize size = [self sizeWithAttributes:@{NSFontAttributeName: font}];
+    return size.width;
+}
 @end
