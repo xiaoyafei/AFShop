@@ -26,7 +26,7 @@
         _tagLabel = [UILabel new];
         _tagLabel.backgroundColor = kColorLightGray;
         _tagLabel.textColor = kColorTextBlack;
-        _tagLabel.font = [UIFont systemFontOfSize:14];
+        _tagLabel.font = [UIFont systemFontOfSize:12];
         _tagLabel.textAlignment = NSTextAlignmentCenter;
         _tagLabel.layer.cornerRadius = 15.f;
         _tagLabel.layer.masksToBounds = YES;

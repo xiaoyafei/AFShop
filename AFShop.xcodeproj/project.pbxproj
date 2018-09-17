@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		988BB1500858AC6E24667984 /* libPods-AFShop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EDF32EBDC3ADE4FA1D4B81B /* libPods-AFShop.a */; };
+		F95B3911214FB9D600DD0CDB /* LeftAlignFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F95B3910214FB9D600DD0CDB /* LeftAlignFlowLayout.m */; };
 		F98AABD8213FC19200456B8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AABD7213FC19200456B8A /* AppDelegate.m */; };
 		F98AABDB213FC19200456B8A /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AABDA213FC19200456B8A /* RootViewController.m */; };
 		F98AABE0213FC19300456B8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F98AABDF213FC19300456B8A /* Assets.xcassets */; };
@@ -31,6 +32,8 @@
 		4BA9920B55DC4EB6FD7788B1 /* Pods-AFShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-AFShop/Pods-AFShop.release.xcconfig"; sourceTree = "<group>"; };
 		509627DAE2D5AD6221B7BFF4 /* Pods-AFShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AFShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AFShop/Pods-AFShop.debug.xcconfig"; sourceTree = "<group>"; };
 		7EDF32EBDC3ADE4FA1D4B81B /* libPods-AFShop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AFShop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F95B390F214FB9D600DD0CDB /* LeftAlignFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftAlignFlowLayout.h; sourceTree = "<group>"; };
+		F95B3910214FB9D600DD0CDB /* LeftAlignFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeftAlignFlowLayout.m; sourceTree = "<group>"; };
 		F98AABD3213FC19200456B8A /* AFShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F98AABD6213FC19200456B8A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F98AABD7213FC19200456B8A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -198,6 +201,8 @@
 				F98AAC13214B4B8F00456B8A /* SearchTagCollectionViewCell.m */,
 				F98AAC15214BA81D00456B8A /* SearchHeaderCollectionReusableView.h */,
 				F98AAC16214BA81D00456B8A /* SearchHeaderCollectionReusableView.m */,
+				F95B390F214FB9D600DD0CDB /* LeftAlignFlowLayout.h */,
+				F95B3910214FB9D600DD0CDB /* LeftAlignFlowLayout.m */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 				F98AABDB213FC19200456B8A /* RootViewController.m in Sources */,
 				F98AABE6213FC19300456B8A /* main.m in Sources */,
 				F98AAC10214A5F2F00456B8A /* UIImage+Common.m in Sources */,
+				F95B3911214FB9D600DD0CDB /* LeftAlignFlowLayout.m in Sources */,
 				F98AAC092147BB6700456B8A /* SearchViewController.m in Sources */,
 				F98AABD8213FC19200456B8A /* AppDelegate.m in Sources */,
 				F98AABF6214603D300456B8A /* LoginInputCell.m in Sources */,

@@ -43,7 +43,7 @@
     }];
     
     _tagTextArray = [NSMutableArray arrayWithArray:@[@"肖步渠", @"洗衣机洗碗机", @"服装西服T恤额", @"微微一笑很青春"]];
-    _recommendArray = [NSMutableArray arrayWithArray:@[@"牛仔裤",@"袜子",@"洗衣机"]];
+    _recommendArray = [NSMutableArray arrayWithArray:@[@"牛仔裤",@"川妹子袜子",@"四川辣妹子牌洗碗机草鸡",@"洗衣机"]];
 }
 
 #pragma mark - UICollectionViewDelegate & DataSource
@@ -52,28 +52,58 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return _tagTextArray.count;
+    if (section == 0) {
+        return _tagTextArray.count;
+    }else{
+        return _recommendArray.count;
+    }
+    
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     SearchTagCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellIdentifier_Search_Tag_Cell forIndexPath:indexPath];
-    cell.tagLabel.text = [_tagTextArray objectAtIndex:indexPath.row];
+    if (indexPath.section == 0) {
+        cell.tagLabel.text = [_tagTextArray objectAtIndex:indexPath.row];
+    }else{
+        cell.tagLabel.text = [_recommendArray objectAtIndex:indexPath.row];
+    }
+    
     return cell;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat width = [[_tagTextArray objectAtIndex:indexPath.row] widthWithFont:[UIFont systemFontOfSize:14]];
+    CGFloat width;
+    if(indexPath.section == 0){
+        width = [[_tagTextArray objectAtIndex:indexPath.row] widthWithFont:[UIFont systemFontOfSize:14]];
+    }else{
+        width = [[_recommendArray objectAtIndex:indexPath.row] widthWithFont:[UIFont systemFontOfSize:14]];
+    }
     return CGSizeMake(width + 30, 30);
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     
     SearchHeaderCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kCellIdentifier_Search_Header forIndexPath:indexPath];
-    headerView.title.text = @"历史记录";
-    [headerView.button setImage:[UIImage imageNamed:@"ic_delete"] forState:UIControlStateNormal];
-    headerView.buttonTappedBlock = ^(id sender) {
-        NXLog(@"123");
-    };
+    if (indexPath.section == 0) {
+        headerView.title.text = @"历史记录";
+        [headerView.button setImage:[UIImage imageNamed:@"ic_delete"] forState:UIControlStateNormal];
+        __weak typeof(self) weakSelf = self;
+        headerView.buttonTappedBlock = ^(id sender) {
+            [weakSelf.tagTextArray removeAllObjects];
+            [weakSelf.collectionView reloadData];
+        };
+    }else {
+        headerView.title.text = @"热门搜索";
+        [headerView.button setImage:[UIImage imageNamed:@"ic_eye"] forState:UIControlStateNormal];
+        __weak typeof(self) weakSelf = self;
+        headerView.buttonTappedBlock = ^(id sender) {
+            [weakSelf.recommendArray removeAllObjects];
+            [weakSelf.collectionView reloadData];
+        };
+    }
+    
+    
+    
     return headerView;
 }
 
