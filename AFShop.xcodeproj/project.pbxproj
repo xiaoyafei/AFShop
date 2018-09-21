@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		988BB1500858AC6E24667984 /* libPods-AFShop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EDF32EBDC3ADE4FA1D4B81B /* libPods-AFShop.a */; };
 		F95B3911214FB9D600DD0CDB /* LeftAlignFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F95B3910214FB9D600DD0CDB /* LeftAlignFlowLayout.m */; };
+		F976386E215237F300F60220 /* MineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F976386D215237F300F60220 /* MineTableViewCell.m */; };
+		F976387421548E1900F60220 /* OrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F976387321548E1900F60220 /* OrderListViewController.m */; };
 		F98AABD8213FC19200456B8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AABD7213FC19200456B8A /* AppDelegate.m */; };
 		F98AABDB213FC19200456B8A /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AABDA213FC19200456B8A /* RootViewController.m */; };
 		F98AABE0213FC19300456B8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F98AABDF213FC19300456B8A /* Assets.xcassets */; };
@@ -34,6 +36,10 @@
 		7EDF32EBDC3ADE4FA1D4B81B /* libPods-AFShop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AFShop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F95B390F214FB9D600DD0CDB /* LeftAlignFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftAlignFlowLayout.h; sourceTree = "<group>"; };
 		F95B3910214FB9D600DD0CDB /* LeftAlignFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeftAlignFlowLayout.m; sourceTree = "<group>"; };
+		F976386C215237F300F60220 /* MineTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineTableViewCell.h; sourceTree = "<group>"; };
+		F976386D215237F300F60220 /* MineTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineTableViewCell.m; sourceTree = "<group>"; };
+		F976387221548E1900F60220 /* OrderListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderListViewController.h; sourceTree = "<group>"; };
+		F976387321548E1900F60220 /* OrderListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderListViewController.m; sourceTree = "<group>"; };
 		F98AABD3213FC19200456B8A /* AFShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F98AABD6213FC19200456B8A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F98AABD7213FC19200456B8A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -99,6 +105,44 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F976386B215237D200F60220 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				F976386C215237F300F60220 /* MineTableViewCell.h */,
+				F976386D215237F300F60220 /* MineTableViewCell.m */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		F976386F2153495B00F60220 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F98AABEF2140D32800456B8A /* LoginViewController.h */,
+				F98AABF02140D32800456B8A /* LoginViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F97638702153496D00F60220 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F98AAC072147BB6700456B8A /* SearchViewController.h */,
+				F98AAC082147BB6700456B8A /* SearchViewController.m */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		F97638712153497E00F60220 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				F98AAC012147BADA00456B8A /* MineViewController.h */,
+				F98AAC022147BADA00456B8A /* MineViewController.m */,
+				F976387221548E1900F60220 /* OrderListViewController.h */,
+				F976387321548E1900F60220 /* OrderListViewController.m */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
 		F98AABCA213FC19200456B8A = {
 			isa = PBXGroup;
 			children = (
@@ -138,18 +182,15 @@
 		F98AABEC213FE6DF00456B8A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F97638712153497E00F60220 /* Mine */,
+				F97638702153496D00F60220 /* Search */,
+				F976386F2153495B00F60220 /* Login */,
 				F98AABD9213FC19200456B8A /* RootViewController.h */,
 				F98AABDA213FC19200456B8A /* RootViewController.m */,
-				F98AABEF2140D32800456B8A /* LoginViewController.h */,
-				F98AABF02140D32800456B8A /* LoginViewController.m */,
 				F98AAC042147BB5100456B8A /* HomeViewController.h */,
 				F98AAC052147BB5100456B8A /* HomeViewController.m */,
-				F98AAC072147BB6700456B8A /* SearchViewController.h */,
-				F98AAC082147BB6700456B8A /* SearchViewController.m */,
 				F98AAC0A2147BBAB00456B8A /* CartViewController.h */,
 				F98AAC0B2147BBAB00456B8A /* CartViewController.m */,
-				F98AAC012147BADA00456B8A /* MineViewController.h */,
-				F98AAC022147BADA00456B8A /* MineViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -157,6 +198,7 @@
 		F98AABED2140D26900456B8A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F976386B215237D200F60220 /* Mine */,
 				F98AAC11214B4B4700456B8A /* Search */,
 				F98AABF32146035F00456B8A /* Login */,
 			);
@@ -309,7 +351,9 @@
 				F98AABFA21463E6700456B8A /* UIColor+Util.m in Sources */,
 				F98AABDB213FC19200456B8A /* RootViewController.m in Sources */,
 				F98AABE6213FC19300456B8A /* main.m in Sources */,
+				F976386E215237F300F60220 /* MineTableViewCell.m in Sources */,
 				F98AAC10214A5F2F00456B8A /* UIImage+Common.m in Sources */,
+				F976387421548E1900F60220 /* OrderListViewController.m in Sources */,
 				F95B3911214FB9D600DD0CDB /* LeftAlignFlowLayout.m in Sources */,
 				F98AAC092147BB6700456B8A /* SearchViewController.m in Sources */,
 				F98AABD8213FC19200456B8A /* AppDelegate.m in Sources */,
@@ -447,6 +491,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C8RE8M6E9F;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AFShop/AFShop-Prefix.pch";
 				INFOPLIST_FILE = AFShop/Info.plist;
@@ -466,6 +511,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C8RE8M6E9F;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AFShop/AFShop-Prefix.pch";
 				INFOPLIST_FILE = AFShop/Info.plist;

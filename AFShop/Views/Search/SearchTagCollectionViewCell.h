@@ -6,6 +6,7 @@
 //  Copyright © 2018 飞. All rights reserved.
 //
 #define kCellIdentifier_Search_Tag_Cell @"Search_tag_cell"
+#define kTagTextPadding 10
 
 #import <UIKit/UIKit.h>
 

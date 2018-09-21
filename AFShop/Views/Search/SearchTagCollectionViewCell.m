@@ -15,8 +15,13 @@
     if (self) {
         [self.contentView addSubview:self.tagLabel];
         [self.tagLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.contentView);
+            make.left.equalTo(self.contentView).offset(kTagTextPadding);
+            make.right.equalTo(self.contentView).offset(-kTagTextPadding);
+            make.top.bottom.equalTo(self.contentView);
         }];
+        self.contentView.layer.masksToBounds = YES;
+        self.contentView.layer.cornerRadius = 15;
+        self.contentView.backgroundColor = kColorLightGray;
     }
     return self;
 }
@@ -24,12 +29,9 @@
 - (UILabel *)tagLabel {
     if (!_tagLabel) {
         _tagLabel = [UILabel new];
-        _tagLabel.backgroundColor = kColorLightGray;
         _tagLabel.textColor = kColorTextBlack;
         _tagLabel.font = [UIFont systemFontOfSize:12];
         _tagLabel.textAlignment = NSTextAlignmentCenter;
-        _tagLabel.layer.cornerRadius = 15.f;
-        _tagLabel.layer.masksToBounds = YES;
     }
     return _tagLabel;
 }

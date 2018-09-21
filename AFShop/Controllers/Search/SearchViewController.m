@@ -9,6 +9,7 @@
 #import "SearchViewController.h"
 #import "SearchTagCollectionViewCell.h"
 #import "SearchHeaderCollectionReusableView.h"
+#import "LeftAlignFlowLayout.h"
 
 @interface SearchViewController () <UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong)UISearchBar *searchBar;
@@ -43,7 +44,7 @@
     }];
     
     _tagTextArray = [NSMutableArray arrayWithArray:@[@"肖步渠", @"洗衣机洗碗机", @"服装西服T恤额", @"微微一笑很青春"]];
-    _recommendArray = [NSMutableArray arrayWithArray:@[@"牛仔裤",@"川妹子袜子",@"四川辣妹子牌洗碗机草鸡",@"洗衣机"]];
+    _recommendArray = [NSMutableArray arrayWithArray:@[@"牛仔裤",@"川妹子袜子",@"四川辣妹子牌洗碗机草鸡空当接龙开发简单来",@"洗衣机"]];
 }
 
 #pragma mark - UICollectionViewDelegate & DataSource
@@ -78,7 +79,8 @@
     }else{
         width = [[_recommendArray objectAtIndex:indexPath.row] widthWithFont:[UIFont systemFontOfSize:14]];
     }
-    return CGSizeMake(width + 30, 30);
+    width = width > (kScreenWidth - 2 * kTagTextPadding - 20) ? (kScreenWidth - 2 * kTagTextPadding - 20) : width;
+    return CGSizeMake(width + 2 * kTagTextPadding, 30);
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
@@ -101,15 +103,16 @@
             [weakSelf.collectionView reloadData];
         };
     }
-    
-    
-    
     return headerView;
 }
 
 #pragma mark - UISearchBarDelegate
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     _cancelBtn.enabled = YES;
+    if (searchBar.text && searchBar.text.length > 0) {
+        [_tagTextArray insertObject:searchBar.text atIndex:0];
+        [_collectionView reloadData];
+    }
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
@@ -140,11 +143,11 @@
 
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
-        UICollectionViewFlowLayout *flowLayout = [UICollectionViewFlowLayout new];
+        LeftAlignFlowLayout *flowLayout = [LeftAlignFlowLayout new];
         flowLayout.itemSize = CGSizeMake(100, 30);
         flowLayout.minimumLineSpacing = 10.f;
         flowLayout.minimumInteritemSpacing = 10.f;
-        flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 0, 10);
+        flowLayout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10);
         flowLayout.headerReferenceSize = CGSizeMake(kScreenWidth, 30);
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
         _collectionView.delegate = self;
@@ -155,6 +158,7 @@
     }
     return _collectionView;
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
