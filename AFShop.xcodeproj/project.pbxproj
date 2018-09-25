@@ -11,6 +11,7 @@
 		F95B3911214FB9D600DD0CDB /* LeftAlignFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F95B3910214FB9D600DD0CDB /* LeftAlignFlowLayout.m */; };
 		F976386E215237F300F60220 /* MineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F976386D215237F300F60220 /* MineTableViewCell.m */; };
 		F976387421548E1900F60220 /* OrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F976387321548E1900F60220 /* OrderListViewController.m */; };
+		F97638762154C77C00F60220 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F97638752154C77C00F60220 /* MobileCoreServices.framework */; };
 		F98AABD8213FC19200456B8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AABD7213FC19200456B8A /* AppDelegate.m */; };
 		F98AABDB213FC19200456B8A /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AABDA213FC19200456B8A /* RootViewController.m */; };
 		F98AABE0213FC19300456B8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F98AABDF213FC19300456B8A /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 		F976386D215237F300F60220 /* MineTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineTableViewCell.m; sourceTree = "<group>"; };
 		F976387221548E1900F60220 /* OrderListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderListViewController.h; sourceTree = "<group>"; };
 		F976387321548E1900F60220 /* OrderListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderListViewController.m; sourceTree = "<group>"; };
+		F97638752154C77C00F60220 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		F98AABD3213FC19200456B8A /* AFShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F98AABD6213FC19200456B8A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F98AABD7213FC19200456B8A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F97638762154C77C00F60220 /* MobileCoreServices.framework in Frameworks */,
 				988BB1500858AC6E24667984 /* libPods-AFShop.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +103,7 @@
 		BBE45A2A6212BEA58FB76162 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F97638752154C77C00F60220 /* MobileCoreServices.framework */,
 				7EDF32EBDC3ADE4FA1D4B81B /* libPods-AFShop.a */,
 			);
 			name = Frameworks;

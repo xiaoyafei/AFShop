@@ -9,13 +9,15 @@
 #import "MineViewController.h"
 #import "MineTableViewCell.h"
 #import "OrderListViewController.h"
+#import <MobileCoreServices/MobileCoreServices.h>
 
-@interface MineViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface MineViewController ()<UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *titles;
 @property (nonatomic, strong) UIImageView *avatarImg;
 @property (nonatomic, strong) UILabel *name;
+@property (nonatomic, strong) UIImage *avatar;
 
 @end
 
@@ -65,8 +67,59 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == 0) {
         OrderListViewController *orderListVC = [[OrderListViewController alloc] init];
+        orderListVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:orderListVC animated:YES];
     }
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info {
+    _avatar = info[UIImagePickerControllerEditedImage];
+    _avatarImg.image = _avatar;
+    [picker dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
+
+#pragma mark - response event
+- (void)didTappedAvatarImg:(id)sender {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"选择操作" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+            UIAlertController *alertCamera = [UIAlertController alertControllerWithTitle:@"错误" message:@"相机不可用" preferredStyle:UIAlertControllerStyleAlert];
+            [alertCamera addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                return ;
+            }]];
+            [self presentViewController:alertCamera animated:YES completion:nil];
+        }
+        else{
+            UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+            imagePickerController.delegate = self;
+            imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+            imagePickerController.allowsEditing = YES;
+            imagePickerController.showsCameraControls = YES;
+            imagePickerController.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+            imagePickerController.mediaTypes = @[(NSString *)kUTTypeImage];
+            
+            [self presentViewController:imagePickerController animated:YES completion:nil];
+        }
+    }]];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+        imagePickerController.delegate = self;
+        imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        imagePickerController.allowsEditing = YES;
+        imagePickerController.mediaTypes = @[(NSString *)kUTTypeImage];
+        
+        [self presentViewController:imagePickerController animated:YES completion:nil];
+    }]];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        return ;
+    }]];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - getter & setter
@@ -91,6 +144,9 @@
     _avatarImg.layer.masksToBounds = YES;
     _avatarImg.layer.borderColor = [UIColor whiteColor].CGColor;
     _avatarImg.layer.borderWidth = 2.f;
+    _avatarImg.userInteractionEnabled = YES;
+    UITapGestureRecognizer *avatarTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTappedAvatarImg:)];
+    [_avatarImg addGestureRecognizer:avatarTap];
     [headerView addSubview:_avatarImg];
     [_avatarImg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(headerView);
@@ -98,6 +154,14 @@
     }];
     
     _name = [UILabel new];
+    _name.text = @"iOS阿飞";
+    _name.font = [UIFont systemFontOfSize:14];
+    _name.textColor = [UIColor whiteColor];
+    [headerView addSubview:_name];
+    [_name mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.avatarImg.mas_bottom).offset(10);
+        make.centerX.equalTo(headerView);
+    }];
     
     return headerView;
 }
