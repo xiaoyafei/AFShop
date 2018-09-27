@@ -12,6 +12,8 @@
 		F976386E215237F300F60220 /* MineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F976386D215237F300F60220 /* MineTableViewCell.m */; };
 		F976387421548E1900F60220 /* OrderListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F976387321548E1900F60220 /* OrderListViewController.m */; };
 		F97638762154C77C00F60220 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F97638752154C77C00F60220 /* MobileCoreServices.framework */; };
+		F976387A215B61F500F60220 /* HomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9763879215B61F500F60220 /* HomeCollectionViewCell.m */; };
+		F976387D215B6B8400F60220 /* HomeBannerCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F976387C215B6B8400F60220 /* HomeBannerCollectionReusableView.m */; };
 		F98AABD8213FC19200456B8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AABD7213FC19200456B8A /* AppDelegate.m */; };
 		F98AABDB213FC19200456B8A /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98AABDA213FC19200456B8A /* RootViewController.m */; };
 		F98AABE0213FC19300456B8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F98AABDF213FC19300456B8A /* Assets.xcassets */; };
@@ -42,6 +44,10 @@
 		F976387221548E1900F60220 /* OrderListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderListViewController.h; sourceTree = "<group>"; };
 		F976387321548E1900F60220 /* OrderListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderListViewController.m; sourceTree = "<group>"; };
 		F97638752154C77C00F60220 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		F9763878215B61F500F60220 /* HomeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeCollectionViewCell.h; sourceTree = "<group>"; };
+		F9763879215B61F500F60220 /* HomeCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeCollectionViewCell.m; sourceTree = "<group>"; };
+		F976387B215B6B8400F60220 /* HomeBannerCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeBannerCollectionReusableView.h; sourceTree = "<group>"; };
+		F976387C215B6B8400F60220 /* HomeBannerCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeBannerCollectionReusableView.m; sourceTree = "<group>"; };
 		F98AABD3213FC19200456B8A /* AFShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AFShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F98AABD6213FC19200456B8A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F98AABD7213FC19200456B8A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -147,6 +153,17 @@
 			path = Mine;
 			sourceTree = "<group>";
 		};
+		F9763877215B61CC00F60220 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F9763878215B61F500F60220 /* HomeCollectionViewCell.h */,
+				F9763879215B61F500F60220 /* HomeCollectionViewCell.m */,
+				F976387B215B6B8400F60220 /* HomeBannerCollectionReusableView.h */,
+				F976387C215B6B8400F60220 /* HomeBannerCollectionReusableView.m */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		F98AABCA213FC19200456B8A = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +219,7 @@
 		F98AABED2140D26900456B8A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F9763877215B61CC00F60220 /* Home */,
 				F976386B215237D200F60220 /* Mine */,
 				F98AAC11214B4B4700456B8A /* Search */,
 				F98AABF32146035F00456B8A /* Login */,
@@ -346,7 +364,9 @@
 			files = (
 				F98AAC00214757CA00456B8A /* NSString+Common.m in Sources */,
 				F98AABF12140D32800456B8A /* LoginViewController.m in Sources */,
+				F976387D215B6B8400F60220 /* HomeBannerCollectionReusableView.m in Sources */,
 				F98AAC14214B4B9000456B8A /* SearchTagCollectionViewCell.m in Sources */,
+				F976387A215B61F500F60220 /* HomeCollectionViewCell.m in Sources */,
 				F98AABFD2147541100456B8A /* NSObject+Common.m in Sources */,
 				F98AAC062147BB5100456B8A /* HomeViewController.m in Sources */,
 				F98AAC17214BA81D00456B8A /* SearchHeaderCollectionReusableView.m in Sources */,
