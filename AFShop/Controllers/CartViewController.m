@@ -9,7 +9,7 @@
 #import "CartViewController.h"
 
 @interface CartViewController ()
-
+@property (nonatomic, strong)UIView *emptyView;
 @end
 
 @implementation CartViewController
@@ -18,21 +18,13 @@
     [super viewDidLoad];
     self.navigationItem.title = @"购物车";
     self.view.backgroundColor = [UIColor whiteColor];
+    _emptyView = [UIView emptyViewWithFrame:self.view.frame andText:@"购物车什么也没有"];
+    [self.view addSubview:_emptyView];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -16,6 +16,7 @@
 #import "NSObject+Common.h"
 #import "NSString+Common.h"
 #import "UIImage+Common.h"
+#import "UIView+Common.h"
 
 #import <Masonry/Masonry.h>
 #import "MBProgressHUD.h"
