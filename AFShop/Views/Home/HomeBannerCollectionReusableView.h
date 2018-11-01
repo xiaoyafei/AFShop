@@ -6,7 +6,7 @@
 //  Copyright © 2018 飞. All rights reserved.
 //
 
-#define kCellIdentifier_Home_Header_cell @"Home_Header_Cell"
+static NSString *const HomeHeaderCellIdentifier = @"HomeHeaderCellIdentifier";
 
 #import <UIKit/UIKit.h>
 #import "SDCycleScrollView.h"

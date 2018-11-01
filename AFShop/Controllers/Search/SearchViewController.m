@@ -62,7 +62,7 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    SearchTagCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellIdentifier_Search_Tag_Cell forIndexPath:indexPath];
+    SearchTagCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:SearchTagCellIdentifier forIndexPath:indexPath];
     if (indexPath.section == 0) {
         cell.tagLabel.text = [_tagTextArray objectAtIndex:indexPath.row];
     }else{
@@ -85,7 +85,7 @@
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     
-    SearchHeaderCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kCellIdentifier_Search_Header forIndexPath:indexPath];
+    SearchHeaderCollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:SearchHeaderIdentifier forIndexPath:indexPath];
     if (indexPath.section == 0) {
         headerView.title.text = @"历史记录";
         [headerView.button setImage:[UIImage imageNamed:@"ic_delete"] forState:UIControlStateNormal];
@@ -153,8 +153,8 @@
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         _collectionView.backgroundColor = kColorGray;
-        [_collectionView registerClass:[SearchTagCollectionViewCell class] forCellWithReuseIdentifier:kCellIdentifier_Search_Tag_Cell];
-        [_collectionView registerClass:[SearchHeaderCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kCellIdentifier_Search_Header];
+        [_collectionView registerClass:[SearchTagCollectionViewCell class] forCellWithReuseIdentifier:SearchTagCellIdentifier];
+        [_collectionView registerClass:[SearchHeaderCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:SearchHeaderIdentifier];
     }
     return _collectionView;
 }

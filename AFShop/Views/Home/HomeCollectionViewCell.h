@@ -5,7 +5,7 @@
 //  Created by 飞 on 2018/9/26.
 //  Copyright © 2018 飞. All rights reserved.
 //
-#define kCellIdentifier_Home_Cell @"Home_Cell"
+static NSString *const HomeCellIdentifier = @"HomeCellIdentifier";
 
 #import <UIKit/UIKit.h>
 

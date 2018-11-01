@@ -5,8 +5,7 @@
 //  Created by 飞 on 2018/9/14.
 //  Copyright © 2018 飞. All rights reserved.
 //
-#define kCellIdentifier_Search_Header @"Search_Header"
-
+static NSString *const SearchHeaderIdentifier = @"SearchHeaderIdentifier";
 #import <UIKit/UIKit.h>
 
 @interface SearchHeaderCollectionReusableView : UICollectionReusableView

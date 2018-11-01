@@ -32,4 +32,12 @@
     CGSize size = [self sizeWithAttributes:@{NSFontAttributeName: font}];
     return size.width;
 }
+
++ (NSString *)documentsPath {
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+}
+
++ (NSString *)filePathAtDocumentWithFileName:(NSString *)fileName {
+    return [[self documentsPath] stringByAppendingPathComponent:fileName];
+}
 @end

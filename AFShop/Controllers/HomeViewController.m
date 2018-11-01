@@ -11,11 +11,14 @@
 #import "HomeCollectionViewCell.h"
 #import "HomeBannerCollectionReusableView.h"
 #import "AppDelegate.h"
+#import "Product.h"
+#import "ProductDetailViewController.h"
 
 @interface HomeViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
-@property (nonatomic, strong)UIView *searchView;
-@property (nonatomic, strong)UIButton *searchButton;
-@property (nonatomic, strong)UICollectionView *collectionView;
+@property (nonatomic, strong) UIView *searchView;
+@property (nonatomic, strong) UIButton *searchButton;
+@property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) NSMutableArray *dataSource;
 @end
 
 @implementation HomeViewController
@@ -23,7 +26,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = kColorGray;
-    [self.navigationController.navigationBar setBarTintColor:kColorGreen];
+    [self.view addSubview:self.collectionView];
+    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+    _dataSource = [NSMutableArray new];
+    [self createProductTable];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self.navigationController.navigationBar addSubview:self.searchView];
     [self.searchView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.navigationController.navigationBar);
@@ -38,11 +50,28 @@
         make.top.equalTo(self.searchView).offset(5);
         make.bottom.equalTo(self.searchView).offset(-5);
     }];
-    
-    [self.view addSubview:self.collectionView];
-    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    }];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.searchView removeFromSuperview];
+}
+
+#pragma mark - FMDB
+- (void)createProductTable {
+    Product *testProduct = [[Product alloc] init];
+    testProduct.ProductName = @"竹节水电T恤";
+    testProduct.ProductDesc = @"无印良品";
+    testProduct.CurrentPrice = 58.2f;
+    testProduct.OriginPrice = 68.9f;
+    testProduct.Count = 10;
+    testProduct.Status = ProductStatusNormal;
+    testProduct.ImageUrl = @"E371ACC2-4E91-4270-A660-2E73FBC8E93A.jpeg";
+
+//    [[JQFMDB shareDatabase] jq_createTable:kProductTableName dicOrModel:[Product class]];
+//    [[JQFMDB shareDatabase] jq_insertTable:kProductTableName dicOrModel:testProduct];
+    NSArray *products = [[JQFMDB shareDatabase] jq_lookupTable:kProductTableName dicOrModel:[Product class] whereFormat:nil];
+    [_dataSource addObjectsFromArray:products];
 }
 
 #pragma mark - UICollectionViewDelegate
@@ -51,18 +80,29 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 10;
+    return _dataSource.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    HomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellIdentifier_Home_Cell forIndexPath:indexPath];
+    HomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:HomeCellIdentifier forIndexPath:indexPath];
+    Product *product = [_dataSource objectAtIndex:indexPath.row];
+    cell.title.text = product.ProductName;
+    cell.desc.text = product.ProductDesc;
+    cell.price.text = [NSString stringWithFormat:@"%.2f", product.CurrentPrice];
+    cell.original.text = [NSString stringWithFormat:@"%.2f", product.OriginPrice];
     return cell;
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-    HomeBannerCollectionReusableView *reuseableView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kCellIdentifier_Home_Header_cell forIndexPath:indexPath];
+    HomeBannerCollectionReusableView *reuseableView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:HomeHeaderCellIdentifier forIndexPath:indexPath];
     reuseableView.cycleScrollView.imageURLStringsGroup = @[@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1537960056841&di=ff9d2609223bd92c4fc432fc315b8f26&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201405%2F31%2F20140531110858_VCuKK.jpeg", @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1537960056839&di=6646be88d5e2a789ae4a9119ef969a67&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201210%2F14%2F20121014191444_TtS8e.thumb.700_0.jpeg"];
     return reuseableView;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    ProductDetailViewController *detailVC = [[ProductDetailViewController alloc] init];
+    detailVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 #pragma mark - event response
@@ -106,8 +146,8 @@
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         _collectionView.backgroundColor = [UIColor clearColor];
-        [_collectionView registerClass:[HomeCollectionViewCell class] forCellWithReuseIdentifier:kCellIdentifier_Home_Cell];
-        [_collectionView registerClass:[HomeBannerCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kCellIdentifier_Home_Header_cell];
+        [_collectionView registerClass:[HomeCollectionViewCell class] forCellWithReuseIdentifier:HomeCellIdentifier];
+        [_collectionView registerClass:[HomeBannerCollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:HomeHeaderCellIdentifier];
     }
     return _collectionView;
 }

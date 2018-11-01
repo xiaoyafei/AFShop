@@ -14,8 +14,13 @@
 
 @implementation AppDelegate
 
++ (AppDelegate *)sharedAppDelegate {
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    return appDelegate;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self customizeInterface];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     _rootViewController = [[RootViewController alloc] init];
     self.window.rootViewController = _rootViewController;
@@ -24,6 +29,18 @@
     return YES;
 }
 
+- (void)customizeInterface {
+    UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
+    [navigationBarAppearance setBarTintColor:kColorGreen];
+    [navigationBarAppearance setTintColor:[UIColor whiteColor]];
+    NSDictionary *textAttributes = @{
+                                     NSFontAttributeName: [UIFont systemFontOfSize:18],
+                                     NSForegroundColorAttributeName: [UIColor whiteColor]
+                                     };
+    [navigationBarAppearance setTitleTextAttributes:textAttributes];
+    navigationBarAppearance.backIndicatorImage = [UIImage imageNamed:@"ic_back"];
+    navigationBarAppearance.backIndicatorTransitionMaskImage = [UIImage imageNamed:@"ic_back"];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

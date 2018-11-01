@@ -5,7 +5,7 @@
 //  Created by 飞 on 2018/9/14.
 //  Copyright © 2018 飞. All rights reserved.
 //
-#define kCellIdentifier_Search_Tag_Cell @"Search_tag_cell"
+static NSString *const SearchTagCellIdentifier = @"SearchTagCellIdentifier";
 #define kTagTextPadding 10
 
 #import <UIKit/UIKit.h>

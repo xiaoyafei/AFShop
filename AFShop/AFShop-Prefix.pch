@@ -17,9 +17,12 @@
 #import "NSString+Common.h"
 #import "UIImage+Common.h"
 #import "UIView+Common.h"
+#import "UIButton+Common.h"
 
 #import <Masonry/Masonry.h>
 #import "MBProgressHUD.h"
+#import <JQFMDB/JQFMDB.h>
+#import "AppDelegate.h"
 
 #pragma mark - Utils Macros
 #define kKeyWindow [UIApplication sharedApplication].keyWindow
@@ -30,6 +33,14 @@
 #define NXLog(...)
 #endif
 
+//设置 view 圆角和边框
+#define AFViewBorderRadius(View, Radius, Width, Color)\
+\
+[View.layer setCornerRadius:(Radius)];\
+[View.layer setMasksToBounds:YES];\
+[View.layer setBorderWidth:(Width)];\
+[View.layer setBorderColor:[Color CGColor]]
+
 #pragma mark - Common Color
 #define kColorGreen [UIColor colorWithHex:0x3FC66B]
 #define kColorLine [UIColor colorWithHex:0xF0F0F0]
@@ -37,6 +48,9 @@
 #define kColorLightGray [UIColor colorWithHex:0xE5E5E5]
 #define kColorTextBlack [UIColor colorWithHex:0x464646]
 #define kColorTextGray [UIColor colorWithHex:0x9D9D9D]
+
+#define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
+#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
 
 #pragma mark - Common Dimens
 #define kDeviceIsiPhone4 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
@@ -50,8 +64,14 @@
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#define kDBName @"db_afshop.sqlite"
+#define kProductTableName @"t_product"
+
 #define kPadding 10.0
 #define kLoginPadding 20.0
 #define kLineHeight (0.5 * [UIScreen mainScreen].scale)
+
+#define kUsualFont(a) [UIFont fontWithName:@"PingFangSC-Regular" size:a]
 
 #endif /* AFShop_Prefix_pch */

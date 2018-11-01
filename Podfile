@@ -7,4 +7,5 @@ pod 'MBProgressHUD', '~>1.1.0'
 pod 'Masonry', '~>1.1.0'
 pod 'TPKeyboardAvoiding', '1.3.2'
 pod 'SDCycleScrollView', '~> 1.75'
+pod 'JQFMDB', '~> 1.1.6'
 end

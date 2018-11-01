@@ -13,4 +13,6 @@
 - (BOOL)validatePassword;
 - (CGSize)sizeWithFont:(UIFont *)font andMaxSize:(CGSize)size;
 - (CGFloat)widthWithFont:(UIFont *)font;
++ (NSString *)documentsPath;
++ (NSString *)filePathAtDocumentWithFileName:(NSString *)fileName;
 @end

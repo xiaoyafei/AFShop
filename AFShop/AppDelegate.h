@@ -14,5 +14,6 @@
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) RootViewController *rootViewController;
 
++ (AppDelegate *)sharedAppDelegate;
 @end
 
