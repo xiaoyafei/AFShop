@@ -32,6 +32,7 @@
     }];
     _dataSource = [NSMutableArray new];
     [self createProductTable];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {

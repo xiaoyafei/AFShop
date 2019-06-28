@@ -19,6 +19,7 @@
         _bannerImg.bannerImageViewContentMode = UIViewContentModeScaleAspectFill;
         _bannerImg.backgroundColor = [UIColor whiteColor];
         _bannerImg.currentPageDotColor = kColorGray;
+        _bannerImg.imageURLStringsGroup = @[@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1537960056841&di=ff9d2609223bd92c4fc432fc315b8f26&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201405%2F31%2F20140531110858_VCuKK.jpeg", @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1537960056839&di=6646be88d5e2a789ae4a9119ef969a67&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fitem%2F201210%2F14%2F20121014191444_TtS8e.thumb.700_0.jpeg"];
         [self.contentView addSubview:_bannerImg];
         
         UIView *lineView = [UIView new];
@@ -36,7 +37,7 @@
         _tagLabel.layer.masksToBounds = YES;
         _tagLabel.textColor = [UIColor whiteColor];
         _tagLabel.font = kUsualFont(13);
-        _tagLabel.text = @"商场自营";
+        _tagLabel.text = @"全新自营";
         _tagLabel.textAlignment = NSTextAlignmentCenter;
         [self.contentView addSubview:_tagLabel];
         [_tagLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -49,6 +50,7 @@
         _titleLabel.numberOfLines = 2;
         _titleLabel.textColor = [UIColor colorWithHex:0x303033];
         _titleLabel.font = kUsualFont(16);
+        _titleLabel.text = @"竹节水电T恤";
         [self.contentView addSubview:_titleLabel];
         [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.top.equalTo(self.tagLabel).offset(-3);
@@ -66,7 +68,7 @@
         
         _chateauName = [UILabel new];
         _chateauName.textColor = [UIColor colorWithHex:0x919199];
-        _chateauName.text = @"Tokar Estate";
+        _chateauName.text = @"无印良品";
         _chateauName.font = kUsualFont(14);
         [self.contentView addSubview:_chateauName];
         [_chateauName mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -80,7 +82,7 @@
         [_chateauName addGestureRecognizer:tap];
         
         _priceLab = [UILabel new];
-        _priceLab.text = @"¥ 135.00";
+        _priceLab.text = @"¥ 58.2";
         _priceLab.textColor = [UIColor colorWithHex:0xcc0022];
         _priceLab.font = kUsualFont(18);
         [self.contentView addSubview:_priceLab];
